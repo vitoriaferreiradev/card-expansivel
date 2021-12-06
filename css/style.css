@@ -1,0 +1,87 @@
+/* ===== GOOGLE FONTS ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* ===== RESET ===== */
+
+*
+{
+    box-sizing: border-box;
+}
+
+body 
+{
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+html 
+{
+    font-size: 62.5%;
+}
+/* ===== CONTAINER ===== */
+
+.container
+{
+    width: 90vw;
+    height: auto;
+    display: flex;
+    gap: 1rem;
+}
+
+.card 
+{
+    flex: .5;
+    height: 80vh;
+    background: #333;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5rem;
+    cursor: pointer;
+    transition: flex .5s ease;
+    position: relative;
+}
+
+.card-title 
+{
+    font-size: 1.5rem;
+    color: #fff;
+    text-shadow: 0 .1rem .2rem black;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(126, 126, 126, 0.5);
+    padding: .5rem;
+    border-radius: .5rem;
+    bottom: 2rem;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.card.active 
+{
+    flex: 3;
+}
+
+.card.active .card-title
+{
+    opacity: 1;
+}
+
+/* Media Queries */
+
+@media (max-width: 864px)
+{
+    .card:nth-of-type(4),
+    .card:last-of-type
+    {
+        display: none;
+    }
+}
+
